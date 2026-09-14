@@ -4,7 +4,7 @@ function M.setup()
 	vim.api.nvim_create_autocmd("User", {
 		pattern = "TSUpdate",
 		callback = function()
-			require("nvim-treesitter.parsers").witz = {
+			require("nvim-treesitter.parsers").witze = {
 				tier = 0,
 				install_info = {
 					url = "https://github.com/acovaci/tree-sitter-witze",

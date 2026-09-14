@@ -1,8 +1,8 @@
 vim.filetype.add({
 	extension = {
-		mod = "witz",
-		gfx = "witz",
-		gui = "witz",
+		mod = "witze",
+		gfx = "witze",
+		gui = "witze",
 	},
 	pattern = {
 		[".*%.txt$"] = {
@@ -10,7 +10,7 @@ vim.filetype.add({
 			function(path, bufnr)
 				local first_line = vim.filetype.getlines(bufnr, 1)
 				if vim.filetype.matchregex(first_line, [[^#\s*witze]]) then
-					return "witz"
+					return "witze"
 				end
 			end,
 		},
