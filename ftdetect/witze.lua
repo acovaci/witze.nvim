@@ -1,14 +1,20 @@
+local function first_line_is_witze(bufnr)
+	local ok, line = pcall(vim.api.nvim_buf_get_lines, bufnr, 0, 1, false)
+	if not ok or not line[1] then
+		return false
+	end
+	return line[1]:match("^#%s*witze") ~= nil
+end
+
 local function witze_txt_ft(path, bufnr)
-	local first_line = vim.filetype.getlines(bufnr, 1)
-	if first_line:match("^#%s*witze") then
+	if first_line_is_witze(bufnr) then
 		return "witze"
 	end
 	return "text"
 end
 
 local function witze_yml_ft(path, bufnr)
-	local first_line = vim.filetype.getlines(bufnr, 1)
-	if first_line:match("^#%s*witze") then
+	if first_line_is_witze(bufnr) then
 		return "witze"
 	end
 	return "yaml"
