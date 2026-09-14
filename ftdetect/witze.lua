@@ -3,6 +3,8 @@ vim.filetype.add({
 		mod = "witze",
 		gfx = "witze",
 		gui = "witze",
+		txt = "witze",
+		yml = "witze",
 	},
 	pattern = {
 		[".*%.txt$"] = {
